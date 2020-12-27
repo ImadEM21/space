@@ -1,0 +1,48 @@
+$body-bg: #000;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+
+
+
+/* Header */
+
+.border-circle {
+    border: 2px solid #FFF;
+    border-radius: 100%;
+}
+
+.liaison {
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    position: relative;
+}
+
+.liaison::after {
+    background: #ffffff;
+    content: '';
+    height: 100vh;
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    width: 1px;
+    pointer-events: none;
+}
