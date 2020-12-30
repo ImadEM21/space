@@ -46,3 +46,12 @@ body {
     width: 1px;
     pointer-events: none;
 }
+
+
+/* Earth */ 
+
+@media screen and (max-width: 720px) {
+  .w-25 {
+    width: 50% !important;
+  }
+}

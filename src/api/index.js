@@ -30,9 +30,26 @@ export const translate = text => {
     });
 };
 
+
+
+const apiEarth = axios.create({
+    baseURL: 'https://epic.gsfc.nasa.gov',
+    headers: {
+        
+    }
+});
+
+export const getData = date => {
+    return apiEarth.get(`/api/natural/date/${date}`);
+};
+
+
+
+
 const apis = {
     getImage,
-    translate
+    translate,
+    getData
 };
 
 export default apis;

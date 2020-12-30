@@ -21,15 +21,15 @@ const Formulaire = (props) => {
     return ( 
         <section id="formulaire" className="container p-md-5 py-5 mt-5">
             <div className="row">
-                <div className="col-12">
-                    <form className="d-flex align-items-center justify-content-around text-white bg-dark w-100" onSubmit={handleSubmit}>
+                <div className="col-12 text-white">
+                    <form className="d-flex flex-column flex-md-row align-items-center justify-content-between justify-content-md-center" onSubmit={handleSubmit}>
                         <div className="form-group w-25 ">
                             <label htmlFor="date">Date: </label>
                             <input type="date" id="date" className="form-control" value={date}
                             onChange={e => setDate(e.target.value)}
                             />
                         </div>
-                        <div className="form-group form-check align-self-end">
+                        <div className="form-group form-check align-self-md-end mx-3">
                             <input type="checkbox" className="form-check-input" id="hd" value={hd}
                             onChange={e => setHd(e.target.checked)}
                             />

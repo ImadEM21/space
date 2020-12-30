@@ -5,6 +5,7 @@ import Formulaire from './Formulaire';
 import Space from './Space';
 import Stargate from './Stargate';
 import Return from './Return';
+import Earth from './Earth';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Header />
             <Presentation />
             <Formulaire />
+            <Earth />
           </div>
         </Route>
         <Route path='/space'>
