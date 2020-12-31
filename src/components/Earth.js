@@ -1,24 +1,27 @@
 import React, {useState} from 'react';
 import apis from '../api/index';
+import { Alert } from 'react-bootstrap';
 
 const Earth = (props) => {
     const [date, setDate] = useState('');
     const [imageEarth, setImageEarth] = useState('');
+    const [imageError, setImageError] = useState(false);
     var today = new Date();
     today = today.toISOString().slice(0, 10);
 
     const handleSubmit = async e => {
         e.preventDefault();
-        setImageEarth('');
+        setImageEarth(''); // if an Image is already showing delete the image
+        setImageError(false); // if the error message is already showing delete the message 
 
         await apis.getData(date)
         .then(res => {
             const aleatoire = nombreAleatoire(0, res.data.length - 1);
-            const image = res.data[aleatoire].image;
+            const image = res.data[aleatoire].image; // in the response there is an array with multiple angles of the Earth so we'll choose one at random 
             const time = date.split('-').join('/');
             setImageEarth(`https://epic.gsfc.nasa.gov/archive/natural/${time}/jpg/${image}.jpg`);
         })
-        .catch(error => console.error(error.response));
+        .catch(error => setImageError(true));
     };
 
     const nombreAleatoire = (min, max) => {
@@ -58,6 +61,15 @@ const Earth = (props) => {
                 <div className="row">
                     <div className="col-12">
                         <a href={imageEarth}><img src={imageEarth} alt="The Earth" /></a>
+                    </div>
+                </div>
+            : null}
+            {imageError ?
+                <div className="row">
+                    <div className="col-12">
+                    <Alert variant="danger" onClose={() => setImageError(false)} dismissible>
+                        Il n'y a pas de photo pour cette date 😲
+                    </Alert>
                     </div>
                 </div>
             : null}

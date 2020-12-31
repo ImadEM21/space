@@ -1,21 +1,25 @@
 import React, {useState}  from 'react';
 import apis from '../api/index';
 import ShowImage from './ShowImage';
+import { Alert } from 'react-bootstrap';
 
 
 const Formulaire = (props) => {
     const [date, setDate] = useState('');
     const [hd, setHd] = useState(false);
     const [image, setImage] = useState();
+    const [error, setError] = useState(false);
 
     const handleSubmit = async e => {
         e.preventDefault();
+        setError(false);
+        setImage();
 
         await apis.getImage(date, hd)
         .then(response => {
             setImage(response.data);
         })
-        .catch(error => console.error(error.response));
+        .catch(error => setError(true));
     };
 
     return ( 
@@ -44,6 +48,15 @@ const Formulaire = (props) => {
             {image && 
                 <ShowImage data={image}/>
             }
+            {error ?
+                <div className="row">
+                    <div className="col-12">
+                        <Alert variant="danger" onClose={() => setError(false)} dismissible >
+                            Une erreur s'est produite ⚒.
+                        </Alert>
+                    </div>
+                </div>
+            : null}
         </section>
      );
 }

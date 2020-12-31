@@ -6,6 +6,7 @@ import Space from './Space';
 import Stargate from './Stargate';
 import Return from './Return';
 import Earth from './Earth';
+import Mars from './Mars';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -13,11 +14,12 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path='/'>
-          <div className="App container-fluid">
+          <div className="App">
             <Header />
             <Presentation />
             <Formulaire />
             <Earth />
+            <Mars />
           </div>
         </Route>
         <Route path='/space'>

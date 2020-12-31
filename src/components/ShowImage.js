@@ -45,9 +45,11 @@ const ShowImage = (props) => {
                             </button>
                             }
                         </div>
+                        {props.data.copyright ?
                         <div className="card-footer text-muted">
                             &copy; {props.data.copyright}
                         </div>
+                        : null}
                     </div>
                 </div>
             </div>

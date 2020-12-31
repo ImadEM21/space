@@ -20,31 +20,11 @@ body {
 
 
 
-
 /* Header */
 
 .border-circle {
     border: 2px solid #FFF;
     border-radius: 100%;
-}
-
-.liaison {
-    -moz-justify-content: center;
-    -webkit-justify-content: center;
-    -ms-justify-content: center;
-    justify-content: center;
-    position: relative;
-}
-
-.liaison::after {
-    background: #ffffff;
-    content: '';
-    height: 100vh;
-    left: 50%;
-    position: absolute;
-    top: 100%;
-    width: 1px;
-    pointer-events: none;
 }
 
 
@@ -54,4 +34,38 @@ body {
   .w-25 {
     width: 50% !important;
   }
+}
+
+
+/* Mars */
+
+#mars {
+  background-image: url('https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/1/b/b/1bb29fb84b_106480_mars-rouge-ok.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+@media screen and (max-width: 720px) {
+  #mars {
+    background-size: cover;
+    background-attachment: scroll;
+  }
+}
+
+.no-bg {
+  background-color: transparent !important;
+  color: #FFF;
+}
+
+.input-bg {
+  background-color: transparent !important;
+  color: #FFF;
+}
+
+.input-bg:focus {
+  background-color: transparent !important;
+  color: #FFF;
+  border-color: #FFF;
+  box-shadow: none;
 }
