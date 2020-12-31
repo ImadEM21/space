@@ -1,8 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGem } from '@fortawesome/free-regular-svg-icons';
+import { faSatellite } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-
 
 const Header = (props) => {
     return (
@@ -10,7 +9,7 @@ const Header = (props) => {
             <div className="row my-5 p-4">
                 <div className="col-12 d-flex align-items-center">
                     <FontAwesomeIcon 
-                    icon={faGem} 
+                    icon={faSatellite} 
                     size="6x" 
                     color="white" 
                     className="m-auto border-circle p-4"

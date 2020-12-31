@@ -7,6 +7,7 @@ import Stargate from './Stargate';
 import Return from './Return';
 import Earth from './Earth';
 import Mars from './Mars';
+import NavBar from './NavBar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <div className="App">
+            <NavBar />
             <Header />
             <Presentation />
             <Formulaire />
@@ -23,10 +25,12 @@ function App() {
           </div>
         </Route>
         <Route path='/space'>
+          <NavBar />
           <Space />
           <Return />
         </Route>
         <Route path='/stargate'>
+          <NavBar />
           <Stargate />
           <Return />
         </Route>

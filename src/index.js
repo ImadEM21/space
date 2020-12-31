@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import 'jquery';
+import '@popperjs/core';
 import './scss/custom.scss';
 
 ReactDOM.render(
