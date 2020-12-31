@@ -5,7 +5,7 @@ const ShowWeather = (props) => {
     return props.sols.reverse().map((sol) => {
         return (
             <div className="col-12 col-md-4 my-3" key={sol}>
-                <div className="card no-bg border-white rounded-0">
+                <div className="card no-bg border-white rounded-0 light-box">
                     <div className="card-body">
                         <h3 className="card-title">
                         Sol: {sol} 🛸
