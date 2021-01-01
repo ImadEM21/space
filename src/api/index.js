@@ -14,6 +14,10 @@ export const getMarsWeather = () => {
     return apiNasa.get(`insight_weather/?api_key=${API_KEY_NASA}&feedtype=json&ver=1.0`);
 };
 
+export const getMarsImages = sol => {
+    return apiNasa.get(`/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&page=1&api_key=${API_KEY_NASA}`);
+}
+
 
 
 const apiTranslate = axios.create({
@@ -51,7 +55,8 @@ const apis = {
     getImage,
     translate,
     getData,
-    getMarsWeather
+    getMarsWeather,
+    getMarsImages
 };
 
 export default apis;

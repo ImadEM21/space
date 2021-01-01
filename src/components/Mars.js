@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import apis from '../api/index';
 import ShowWeather from './ShowWeather';
 import SolConverter from './SolConverter';
+import MarsPhotos from './MarsPhotos';
 import { Spinner, Alert } from 'react-bootstrap';
 
 
@@ -66,6 +67,7 @@ const Mars = (props) => {
                     <SolConverter />
                 </div>
             </div>
+            <MarsPhotos />
         </section>
         : null}
         {error ?

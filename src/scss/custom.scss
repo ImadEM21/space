@@ -122,3 +122,20 @@ body {
   transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
 }
+
+
+/* Footer */ 
+
+.icon-hover {
+  color: #CFCFCF;
+}
+
+  .icon-hover:hover {
+  color: #fff;
+}
+
+#footer {
+  ul {
+    list-style: none;
+  }
+}

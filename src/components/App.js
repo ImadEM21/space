@@ -8,6 +8,7 @@ import Return from './Return';
 import Earth from './Earth';
 import Mars from './Mars';
 import NavBar from './NavBar';
+import Footer from './Footer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Formulaire />
             <Earth />
             <Mars />
+            <Footer />
           </div>
         </Route>
         <Route path='/space'>
