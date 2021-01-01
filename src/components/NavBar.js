@@ -6,7 +6,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 const NavBar = (props) => {
     return ( 
         <>
-        <Navbar className="no-bg" expand="lg" >
+        <Navbar className="no-bg border-bottom border-white" expand="lg" >
             <Navbar.Brand href="/">
                 <FontAwesomeIcon icon={faUserAstronaut} color="white" size="4x"/>
             </Navbar.Brand>

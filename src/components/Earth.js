@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import apis from '../api/index';
-import { Alert } from 'react-bootstrap';
+import { Alert, Spinner } from 'react-bootstrap';
 
 const Earth = (props) => {
     const [date, setDate] = useState('');
     const [imageEarth, setImageEarth] = useState('');
     const [imageError, setImageError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     var today = new Date();
     today = today.toISOString().slice(0, 10);
 
     const handleSubmit = async e => {
         e.preventDefault();
-        setImageEarth(''); // if an Image is already showing delete the image
+        setImageEarth(''); // if an Image is already on screen delete the image
         setImageError(false); // if the error message is already showing delete the message 
 
         await apis.getData(date)
@@ -20,8 +21,12 @@ const Earth = (props) => {
             const image = res.data[aleatoire].image; // in the response there is an array with multiple angles of the Earth so we'll choose one at random 
             const time = date.split('-').join('/');
             setImageEarth(`https://epic.gsfc.nasa.gov/archive/natural/${time}/jpg/${image}.jpg`);
+            setIsLoading(false);
         })
-        .catch(error => setImageError(true));
+        .catch(error => {
+            setImageError(true);
+            setIsLoading(false);
+        });
     };
 
     const nombreAleatoire = (min, max) => {
@@ -50,13 +55,20 @@ const Earth = (props) => {
                             <input type="date" id="earth-date" className="form-control w-25 mx-3" 
                             value={date} min="2015-08-31" max={today} required
                             onChange={e => setDate(e.target.value)}/>
-                            <button type="submit" className="btn btn-outline-light rounded-0">
+                            <button type="submit" className="btn btn-outline-light rounded-0" onClick={() => setIsLoading(true)}>
                                 Envoyer
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
+            {isLoading ?
+                <div className="row">
+                    <div className="col-12 d-flex justify-content-center">
+                        <Spinner variant="white" animation="grow"/>
+                    </div>
+                </div>
+            : null}
             {imageEarth ?
                 <div className="row">
                     <div className="col-12">

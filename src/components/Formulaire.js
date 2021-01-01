@@ -1,7 +1,7 @@
 import React, {useState}  from 'react';
 import apis from '../api/index';
 import ShowImage from './ShowImage';
-import { Alert } from 'react-bootstrap';
+import { Alert, Spinner } from 'react-bootstrap';
 
 
 const Formulaire = (props) => {
@@ -9,6 +9,7 @@ const Formulaire = (props) => {
     const [hd, setHd] = useState(false);
     const [image, setImage] = useState();
     const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -18,8 +19,12 @@ const Formulaire = (props) => {
         await apis.getImage(date, hd)
         .then(response => {
             setImage(response.data);
+            setIsLoading(false);
         })
-        .catch(error => setError(true));
+        .catch(error => {
+            setError(true)
+            setIsLoading(false);
+        });
     };
 
     return ( 
@@ -39,12 +44,19 @@ const Formulaire = (props) => {
                             />
                             <label className="form-check-label" htmlFor="hd">Photo en HD</label>
                         </div>
-                        <button type="submit" className="btn btn-outline-light rounded-0">
+                        <button type="submit" className="btn btn-outline-light rounded-0" onClick={() => setIsLoading(true)}>
                             Envoyer
                         </button>
                     </form>
                 </div>
             </div>
+            {isLoading ?
+                <div className="row">
+                    <div className="col-12 d-flex justify-content-center">
+                        <Spinner variant="white" animation="grow"/>
+                    </div>
+                </div>
+            : null}
             {image && 
                 <ShowImage data={image}/>
             }

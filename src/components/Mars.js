@@ -2,20 +2,27 @@ import React, { useEffect, useState } from 'react';
 import apis from '../api/index';
 import ShowWeather from './ShowWeather';
 import SolConverter from './SolConverter';
+import { Spinner, Alert } from 'react-bootstrap';
 
 
 const Mars = (props) => {
     const [weather, setWeather] = useState();
     const [showData, setShowData] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const getWeather = async () => {
             await apis.getMarsWeather()
             .then(res => {
                 setWeather(res.data);
+                setIsLoading(false);
                 setShowData(true);
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                setIsLoading(false);
+                setError(true);
+            });
         };
 
         getWeather();        
@@ -24,6 +31,15 @@ const Mars = (props) => {
 
     return ( 
         <>
+        {isLoading ?
+            <section id="mars" className="container-fluid p-md-5 py-5">
+                <div className="row">
+                    <div className="col-12 d-flex justify-content-center">
+                        <Spinner variant="white" animation="grow"/>
+                    </div>
+                </div>
+            </section>
+        : null}
         {showData ?
         <section id="mars" className="container-fluid p-md-5 py-5">
             <div className="row">
@@ -51,6 +67,17 @@ const Mars = (props) => {
                 </div>
             </div>
         </section>
+        : null}
+        {error ?
+            <section id="mars" className="container-fluid p-md-5 py-5">
+                <div className="row">
+                    <div className="col-12">
+                        <Alert variant="danger" onClose={() => setError(false)} dismissible>
+                            Une erreur s'est produite ⚒.
+                        </Alert>
+                    </div>
+                </div>
+            </section>
         : null}
         </>
      );
