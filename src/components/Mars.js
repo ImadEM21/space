@@ -3,6 +3,7 @@ import apis from '../api/index';
 import ShowWeather from './ShowWeather';
 import SolConverter from './SolConverter';
 import MarsPhotos from './MarsPhotos';
+import Questions from './Questions';
 import { Spinner, Alert } from 'react-bootstrap';
 
 
@@ -59,6 +60,8 @@ const Mars = (props) => {
                         <li>1 heure martienne ≈ 1,02 heures terrestres</li>
                         <li>1 minutes martienne ≈ 1,02 minutes terrestres</li>
                         <li>1 seconde martienne ≈ 1,02 secondes terrestres</li>
+                        <li>Pression moyenne sur Terre au niveau de la mer et à 15&deg;C ≈ 101 325 <strong>Pa</strong></li>
+                        <li>Température moyenne sur Terre est de 15&deg;C</li>
                     </ul>
                 </div>
             </div>
@@ -68,6 +71,7 @@ const Mars = (props) => {
                 </div>
             </div>
             <MarsPhotos />
+            <Questions />
         </section>
         : null}
         {error ?

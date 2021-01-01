@@ -20,11 +20,8 @@ const Header = (props) => {
                 <div className="col-12 text-center text-white">
                     <h1>Bienvenu dans l'espace !</h1>
                     <p>
-                        Vous allez découvrir ici les photos et vidéos prises par la NASA n'importe quel jour.
-                        Il vous suffira de rentrer la date que vous souhaitez pour avoir la photo prise 
-                        ce jour là par la NASA.
-                        Vous pourrez également voir une petite représentation du système solaire ainsi que le 
-                        fameux portail bleu de Satrgate.
+                        Vous allez découvrir ici quelques données que la NASA met à disposition au grand public.
+                        Des photos, des vidéos et quelques données seront donc à découvrir sur ce site !
                     </p>
                 </div>
             </div>

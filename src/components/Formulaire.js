@@ -10,6 +10,7 @@ const Formulaire = (props) => {
     const [image, setImage] = useState();
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    var today = new Date().toISOString().slice(0, 10);
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -28,7 +29,7 @@ const Formulaire = (props) => {
     };
 
     return ( 
-        <section id="formulaire" className="container p-md-5 py-5 mt-5">
+        <section id="formulaire" className="container p-md-5 py-5 mt-0 border-left border-right border-bottom border-white">
             <div className="row">
                 <div className="col-12 text-white">
                     <form className="d-flex flex-column flex-md-row align-items-center justify-content-between justify-content-md-center" onSubmit={handleSubmit}>
@@ -36,6 +37,7 @@ const Formulaire = (props) => {
                             <label htmlFor="date">Date: </label>
                             <input type="date" id="date" className="form-control" value={date}
                             onChange={e => setDate(e.target.value)}
+                            max={today} min="1995-06-16"
                             />
                         </div>
                         <div className="form-group form-check align-self-md-end mx-3">

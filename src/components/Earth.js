@@ -35,15 +35,15 @@ const Earth = (props) => {
 
 
     return ( 
-        <section id="earth" className="container p-md-5 py-5 text-white">
+        <section id="earth" className="container p-md-5 py-5 text-white border-left border-right border-top border-white mt-3">
             <div className="row mb-4">
                 <div className="col-12">
-                    <h3 className="text-center my-3">Et si vous pouviez voir une photo de la terre depuis l'espace ?</h3>
+                    <h3 className="text-center my-3">Qu'en est-il de notre planète ?</h3>
                     <p className="text-justify">
-                        En effet, en plus d'avoir des photos et vidéos chaque jour de la NASA, on peut également 
-                        avoir des photos de notre planète chaque jour.<br />
-                        Alors pour voir ça il suffit de choisir la date pour avoir la photo de la Terre qui lui 
-                        correspond.
+                        Depuis le 31 août 2015 le NASA met également en ligne des photos en temps réel de la Terre depuis 
+                        l'espace.<br />
+                        Depuis cette date on a quasiment une photo par jour sous différents angles, alors choississez une date 
+                        pour voir notre sublime planète.
                     </p>
                 </div>
             </div>
