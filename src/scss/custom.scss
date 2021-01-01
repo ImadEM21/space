@@ -77,3 +77,48 @@ body {
   rgba(255, 255, 255, 0.1) -20px 20px, 
   rgba(255, 255, 255, 0.05) -25px 25px;
 }
+
+
+/* NavBar */ 
+
+.nav-hover {
+  padding-bottom: 0.3em;
+}
+  .nav-hover:hover {
+    padding-bottom: 0;
+    border-bottom: 0.3em solid #FFF;
+  }
+
+
+.icon-rotation {
+  -webkit-animation: spin 6s linear infinite;
+  -moz-animation: spin 6s linear infinite;
+  animation: spin 6s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360%);
+  }
+}
+
+.icon-transform {
+  transition-duration: 1.2s;
+  transition-property: transform;
+}
+
+.icon-transform:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
