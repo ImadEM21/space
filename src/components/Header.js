@@ -18,7 +18,7 @@ const Header = (props) => {
             </div>
             <div className="row mt-4 p-4 border-top border-bottom">
                 <div className="col-12 text-center text-white">
-                    <h1>Bienvenu dans l'espace !</h1>
+                    <h1>Bienvenue dans l'espace !</h1>
                     <p>
                         Vous allez découvrir ici quelques données que la NASA met à disposition au grand public.
                         Des photos, des vidéos et quelques données seront donc à découvrir sur ce site !
