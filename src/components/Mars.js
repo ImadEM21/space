@@ -60,7 +60,7 @@ const Mars = (props) => {
                         <li>1 minutes martienne ≈ 1,02 minutes terrestres</li>
                         <li>1 seconde martienne ≈ 1,02 secondes terrestres</li>
                         <li>Pression moyenne sur Terre au niveau de la mer et à 15&deg;C ≈ 101 325 <strong>Pa</strong></li>
-                        <li>Température moyenne sur Terre est de 15&deg;C</li>
+                        <li>Température moyenne sur Terre ≈ 15&deg;C</li>
                     </ul>
                 </div>
             </div>
