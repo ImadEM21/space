@@ -50,7 +50,7 @@ const MarsPhotos = (props) => {
         <>
             <div className="row mt-5">
                 <div className="col-12">
-                    <h3 className="text-center text-white">25 photos prises sur Mars</h3>
+                    <h3 className="text-center text-white">Quelques photos prises sur Mars</h3>
                 </div>
             </div>
             <div className="row mt-5">
